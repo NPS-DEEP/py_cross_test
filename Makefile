@@ -1,10 +1,10 @@
 # 64-bit compiler
-#GCC = x86_64-w64-mingw32-gcc
-#GPP = x86_64-w64-mingw32-g++
+GCC = x86_64-w64-mingw32-gcc -D MS_WIN64
+GPP = x86_64-w64-mingw32-g++
 
 # 32-bit compiler
-GCC = i686-w64-mingw32-gcc
-GPP = i686-w64-mingw32-g++
+#GCC = i686-w64-mingw32-gcc
+#GPP = i686-w64-mingw32-g++
 
 # recipe for test_wrap.cpp
 # note that SWIG creates test_wrap.cpp and test.py
@@ -20,7 +20,7 @@ test_wrap.o: test.i test.hpp
 	$(GCC) -Ipy_parts -Wall -c test_wrap.cpp
 
 clean:
-	rm *.o *.pyc *.pyd 
+	rm -f *.o *.pyc *.pyd 
 
 install: _test.pyd
 	rm -rf install
