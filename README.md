@@ -24,7 +24,9 @@ Setup for Fedora 20:
 
     make
 
-5) Run `tester.py` to see if "hello world" shows up:
+5) Copy test module files and tester.py to Windows.
+
+6) On Windows, run `tester.py` to see if "hello world" shows up:
 
     ./tester.py
 

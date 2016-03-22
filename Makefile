@@ -8,7 +8,7 @@ GPP = i686-w64-mingw32-g++
 
 # recipe for test_wrap.cpp
 # note that SWIG creates test_wrap.cpp and test.py
-test.dll: test.o test_wrap.o
+_test.pyd: test.o test_wrap.o
 	$(GPP) -Wall -Wextra -shared \
 	-o _test.pyd test.o test_wrap.o py_parts/libpython27.a
 
@@ -21,3 +21,9 @@ test_wrap.o: test.i test.hpp
 
 clean:
 	rm *.o *.pyc *.pyd 
+
+install: _test.pyd
+	rm -rf install
+	mkdir install
+	cp test.py install
+	cp _test.pyd install
