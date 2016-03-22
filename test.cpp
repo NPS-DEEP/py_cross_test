@@ -1,5 +1,5 @@
 #include<iostream>
-package test {
+namespace test {
   void hello_world() {
     printf("hello world");
   }

@@ -1,4 +1,4 @@
-package test {
+namespace test {
   void hello_world();
 }
 

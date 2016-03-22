@@ -1,16 +1,23 @@
+# 64-bit compiler
+#GCC = x86_64-w64-mingw32-gcc
+#GPP = x86_64-w64-mingw32-g++
+
+# 32-bit compiler
+GCC = i686-w64-mingw32-gcc
+GPP = i686-w64-mingw32-g++
 
 # recipe for test_wrap.cpp
 # note that SWIG creates test_wrap.cpp and test.py
 test.dll: test.o test_wrap.o
-	x86_64-w64-mingw32-gcc -I../py_parts -Wall -Wextra -shared \
-	-o _test.pyd test.o test_wrap.o ../py_parts/libpython27.a
+	$(GPP) -Wall -Wextra -shared \
+	-o _test.pyd test.o test_wrap.o py_parts/libpython27.a
 
 test.o: test.hpp test.cpp
-	x86_64-w64-mingw32-gcc -c test.cpp
+	$(GCC) -c test.cpp
 
 test_wrap.o: test.i test.hpp
-	swig -c++ -python -o test_wrap.cpp ../../python_bindings/test.i
-	x86_64-w64-mingw32-gcc -c test_wrap.cpp
+	swig -c++ -python -o test_wrap.cpp test.i
+	$(GCC) -Ipy_parts -Wall -c test_wrap.cpp
 
 clean:
-	rm *.o 
+	rm *.o *.pyc *.pyd 

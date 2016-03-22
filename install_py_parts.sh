@@ -1,5 +1,5 @@
 # A Python27 .msi file.  Pick one, but it needs to be 64-bit.
-MSI_FILE = python-2.7.10.msi
+MSI_FILE=python-2.7.10.msi
 
 # put everyting in py_parts/
 rm -r py_parts
@@ -7,6 +7,7 @@ mkdir py_parts
 cd py_parts
 
 # Get Python27 .msi, pick one or try this one.  It needs to be 64-bit:
+echo https://www.python.org/ftp/python/2.7.10/$MSI_FILE
 wget https://www.python.org/ftp/python/2.7.10/$MSI_FILE
 
 # extract
