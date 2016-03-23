@@ -1,16 +1,16 @@
 # A Python27 .msi file.  Pick one, but it needs to be 64-bit.
 
 # 32-bit
-#MSI_FILE=python-2.7.6.msi
+MSI_FILE=python-2.7.6.msi
 
 # 64-bit
-MSI_FILE=python-2.7.6.amd64.msi
+#MSI_FILE=python-2.7.6.amd64.msi
 
 # 32-bit
-#DLLTOOL=/usr/i686-w64-mingw32/bin/dlltool
+DLLTOOL=/usr/i686-w64-mingw32/bin/dlltool
 
 # 64-bit
-DLLTOOL=/usr/x86_64-w64-mingw32/bin/dlltool
+#DLLTOOL=/usr/x86_64-w64-mingw32/bin/dlltool
 
 # put everyting in py_parts/
 rm -r py_parts
