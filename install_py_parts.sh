@@ -1,5 +1,10 @@
 # A Python27 .msi file.  Pick one, but it needs to be 64-bit.
-MSI_FILE=python-2.7.11.amd64.msi
+
+# 32-bit
+#MSI_FILE=python-2.7.6.msi
+
+# 64-bit
+MSI_FILE=python-2.7.6.amd64.msi
 
 # 32-bit
 #DLLTOOL=/usr/i686-w64-mingw32/bin/dlltool
@@ -13,7 +18,7 @@ mkdir py_parts
 cd py_parts
 
 # Get Python27 .msi, pick one or try this one.  It needs to be 64-bit:
-wget https://www.python.org/ftp/python/2.7.11/$MSI_FILE
+wget https://www.python.org/ftp/python/2.7.6/$MSI_FILE
 #cp ~/Downloads/$MSI_FILE .
 
 # extract

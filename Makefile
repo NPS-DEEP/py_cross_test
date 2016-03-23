@@ -1,6 +1,6 @@
 # 64-bit compiler
 GCC = x86_64-w64-mingw32-gcc -D MS_WIN64
-GPP = x86_64-w64-mingw32-g++
+GPP = x86_64-w64-mingw32-g++ -fPIC -DPIC
 
 # 32-bit compiler
 #GCC = i686-w64-mingw32-gcc
@@ -22,8 +22,3 @@ test_wrap.o: test.i test.hpp
 clean:
 	rm -f *.o *.pyc *.pyd 
 
-install: _test.pyd
-	rm -rf install
-	mkdir install
-	cp test.py install
-	cp _test.pyd install

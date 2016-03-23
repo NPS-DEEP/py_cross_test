@@ -1,8 +1,6 @@
 *.swp
 *.o
 *.pyc
-*.pyd
 pexports*
 py_parts
-test.py
 test_wrap.cpp

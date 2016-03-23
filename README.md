@@ -20,11 +20,11 @@ Setup for Fedora 20:
 
     ./install_py_parts.sh
 
-4) Compile everything for the test including `_test.dll`:
+4) Compile the test module:
 
     make
 
-5) Copy test module files and tester.py to Windows.
+5) Copy generated test module file `_test.pyd` and `tester.py` to Windows.
 
 6) On Windows, run `tester.py` to see if "hello world" shows up:
 
